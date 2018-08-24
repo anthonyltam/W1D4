@@ -1,6 +1,7 @@
 require_relative "tile"
-
+require 'byebug'
 class Board
+  
   def self.empty_grid
     Array.new(9) do
       Array.new(9) { Tile.new(0) }
@@ -38,6 +39,7 @@ class Board
 
   def render
     puts "  #{(0..8).to_a.join(" ")}"
+    # debugger
     grid.each_with_index do |row, i|
       puts "#{i} #{row.join(" ")}"
     end
